@@ -571,15 +571,15 @@ const LandingPage = () => {
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
           <div className="md:col-span-5 flex flex-col items-center gap-6">
             <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-[#e2383a]/30 shadow-2xl bg-white"
+              className="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[450px] aspect-[4/5] rounded-3xl overflow-hidden border-4 border-white shadow-2xl bg-white"
             >
               <img 
                 src={directorImage} 
-                className="w-full h-full object-cover object-center hover:scale-105 transition duration-1000 ease-out-quint" 
+                className="w-full h-full object-cover object-center hover:scale-105 transition duration-1000 ease-out" 
                 alt="Diksha Singh" 
               />
             </motion.div>
@@ -596,7 +596,7 @@ const LandingPage = () => {
                 Diksha Singh
               </h4>
               <p className="text-xs sm:text-sm font-black uppercase text-[#e2383a] tracking-widest">
-                Director, Five Star Enterprises
+                Founder & Director, Five Star Enterprises
               </p>
             </motion.div>
             
@@ -647,7 +647,7 @@ const LandingPage = () => {
             className="md:col-span-7 space-y-5 text-center md:text-left"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e2383a]/10 border border-[#e2383a]/20 text-[#e2383a] text-xs font-bold uppercase tracking-widest">
-              Director's Vision
+              Founder & Director's Vision
             </div>
             
             <h3 className="text-2xl sm:text-3xl md:text-5xl font-black uppercase text-gray-900 leading-tight">
@@ -655,7 +655,7 @@ const LandingPage = () => {
             </h3>
             
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              At Five Star Enterprises, our mission is to redefine your transit experience. Under the vision of our director, <strong className="text-gray-900 font-bold">Diksha Singh</strong>, we combine state-of-the-art vehicles, verified chauffeurs, and customized tour operations to make every mile you travel with us safe, premium, and memorable.
+              At Five Star Enterprises, our mission is to redefine your transit experience. Under the vision of our founder & director, <strong className="text-gray-900 font-bold">Diksha Singh</strong>, we combine state-of-the-art vehicles, verified chauffeurs, and customized tour operations to make every mile you travel with us safe, premium, and memorable.
             </p>
             
             <p className="text-gray-500 text-xs md:text-sm leading-relaxed">
