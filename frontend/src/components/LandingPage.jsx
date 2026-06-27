@@ -166,34 +166,6 @@ const LandingPage = () => {
   return (
     <div className="bg-white text-gray-800">
 
-      {/* DEVOTIONAL BLESSINGS BANNER */}
-      <div className="bg-gradient-to-r from-red-900 via-red-800 to-red-950 text-white py-4 px-6 border-b border-amber-500/30 flex items-center justify-center relative overflow-hidden shadow-md">
-        {/* Subtle decorative elements */}
-        <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-amber-500/10 to-transparent pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-amber-500/10 to-transparent pointer-events-none" />
-        
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left relative z-10">
-          <div className="relative flex-shrink-0">
-            <div className="absolute inset-0 bg-amber-500/30 rounded-full blur-sm animate-pulse" />
-            <img 
-              src={maaTaraImage} 
-              alt="Maa Tara Blessings" 
-              className="relative w-14 h-14 object-cover rounded-full border-2 border-amber-400 shadow-lg object-center"
-            />
-          </div>
-          <div className="space-y-1">
-            <h3 className="text-amber-300 font-bold text-sm sm:text-base tracking-widest uppercase flex items-center justify-center sm:justify-start gap-2">
-              <span>जय माँ तारा</span>
-              <span className="text-xs text-white/60">•</span>
-              <span className="text-xs text-white/80 font-medium">Safe & Auspicious Journeys</span>
-            </h3>
-            <p className="text-xs text-gray-200 leading-relaxed font-medium">
-              We seek the divine blessings of Maa Tara for all our passengers. May every ride with Five Star Enterprises be blessed with safety, peace, and protection. 🙏🏻❤️🌺
-            </p>
-          </div>
-        </div>
-      </div>
-
       {/* HERO SECTION WITH BG BANNER & LAYOUT */}
       <section className="relative min-h-screen sm:min-h-[85vh] flex items-center justify-center py-12 sm:py-16 px-4 bg-[#1a1c1e] border-b border-gray-200 overflow-hidden">
         {/* Background Image with smooth entrance zoom-out */}
@@ -426,6 +398,67 @@ const LandingPage = () => {
                 Choose Your Car <ArrowRight size={14} />
               </Link>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* DEVOTIONAL BLESSINGS SECTION */}
+      <section className="py-20 bg-gradient-to-b from-[#2d0b0c] via-[#1a0607] to-[#0a0203] text-white relative overflow-hidden border-t-4 border-amber-500 border-b border-white/5">
+        {/* Decorative light overlays */}
+        <div className="absolute -right-20 -top-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-red-500/10 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10">
+          {/* Left Column: Big Image of Maa Tara */}
+          <div className="md:col-span-5 flex flex-col items-center justify-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-full max-w-[340px] xs:max-w-[380px] md:max-w-[400px] aspect-[3/4] rounded-3xl overflow-hidden border-4 border-amber-400 shadow-2xl bg-black relative group"
+            >
+              {/* Inner amber glowing border */}
+              <div className="absolute inset-0 border-2 border-amber-300/30 rounded-2xl pointer-events-none z-10 m-1" />
+              <img 
+                src={maaTaraImage} 
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition duration-1000 ease-out" 
+                alt="Maa Tara Blessings" 
+              />
+            </motion.div>
+          </div>
+          
+          {/* Right Column: Devotional Text */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="md:col-span-7 space-y-6 text-center md:text-left"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-black uppercase tracking-widest">
+              🙏🏻 शुभ यात्रा • DIVINE BLESSINGS 🙏🏻
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tight leading-none text-white">
+              Jai Maa <span className="text-amber-400">Tara</span>
+            </h2>
+            
+            <div className="h-1 w-20 bg-amber-500 mx-auto md:mx-0 rounded-full" />
+            
+            <p className="text-gray-200 leading-relaxed text-sm sm:text-base font-semibold">
+              At Five Star Enterprises, we believe every journey is sacred. Before our vehicles hit the road, we dedicate them and seek the supreme protection and divine grace of Maa Tara.
+            </p>
+            
+            <p className="text-gray-300 leading-relaxed text-xs sm:text-sm font-medium">
+              We pray for the absolute safety, happiness, and well-being of all our travelers. May her divine blessing guide every mile you travel with us and bring peace and prosperity to your destination.
+            </p>
+            
+            <div className="p-4 bg-white/5 rounded-2xl border border-white/10 max-w-lg mx-auto md:mx-0">
+              <p className="text-amber-300/90 font-serif italic text-sm sm:text-base text-center">
+                "जय माँ तारा - सबका कल्याण हो, सबकी यात्रा सुखद और सुरक्षित हो।"
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
