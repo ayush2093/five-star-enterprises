@@ -846,11 +846,11 @@ const LandingPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl bg-gray-900"
+              className="w-full max-w-[300px] xs:max-w-[340px] md:max-w-[380px] aspect-[9/16] rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl bg-gray-900"
             >
               <img 
                 src={ayushImage} 
-                className="w-full h-full object-cover object-top hover:scale-110 transition duration-1000 ease-out" 
+                className="w-full h-full object-cover object-top hover:scale-105 transition duration-1000 ease-out" 
                 alt="Ayush Singh" 
               />
             </motion.div>
