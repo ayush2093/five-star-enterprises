@@ -4,11 +4,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { 
   ArrowRight, Shield, Award, Clock, Users, Star, 
   MapPin, Calendar, Phone, User, MessageSquare,
-  Facebook, Instagram, Linkedin, Mail
+  Facebook, Instagram, Linkedin, Mail, Github
 } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import directorImage from '../assets/diksha_singh.jpg';
 import maaTaraImage from '../assets/maa_tara.jpeg';
+import ayushImage from '../assets/ayush.png';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -831,6 +832,84 @@ const LandingPage = () => {
               Contact Us Now <ArrowRight size={14} />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* DEVELOPER CREDIT SECTION */}
+      <section className="py-24 bg-gray-950 text-white relative overflow-hidden border-t border-gray-900">
+        <div className="absolute -right-20 -top-20 w-80 h-80 bg-red-500/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12 relative z-10">
+          <div className="flex flex-col items-center gap-6 flex-shrink-0">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl bg-gray-900"
+            >
+              <img 
+                src={ayushImage} 
+                className="w-full h-full object-cover object-top hover:scale-110 transition duration-1000 ease-out" 
+                alt="Ayush Singh" 
+              />
+            </motion.div>
+            
+            {/* SOCIAL LOGOS */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="flex items-center gap-4"
+            >
+              <a 
+                href="https://github.com/ayush2093" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-[#e2383a] hover:text-white transition duration-300 shadow-lg text-gray-400 hover:border-transparent"
+                title="GitHub"
+              >
+                <Github size={18} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/ayush-singh-622951297/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-[#e2383a] hover:text-white transition duration-300 shadow-lg text-gray-400 hover:border-transparent"
+                title="LinkedIn"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a 
+                href="https://www.instagram.com/_.ayush._chauhan._/?hl=en" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 border border-white/10 rounded-full hover:bg-[#e2383a] hover:text-white transition duration-300 shadow-lg text-gray-400 hover:border-transparent"
+                title="Instagram"
+              >
+                <Instagram size={18} />
+              </a>
+            </motion.div>
+          </div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="space-y-4 text-center md:text-left max-w-lg"
+          >
+            <span className="uppercase tracking-[0.3em] text-[10px] font-bold text-white/50 block">
+              CREATOR & LEAD ENGINEER
+            </span>
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase leading-tight text-white">
+              Made by <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-indigo-400">Ayush Singh</span> with ❤️
+            </h3>
+            <p className="text-gray-400 leading-relaxed text-sm">
+              Engineered with a passion for creative technology, responsive performance, and premium user experience designs. Bringing Ranchi's premier mobility portal to life.
+            </p>
+          </motion.div>
         </div>
       </section>
 
