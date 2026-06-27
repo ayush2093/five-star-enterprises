@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import directorImage from '../assets/diksha_singh.jpg';
+import maaTaraImage from '../assets/maa_tara.jpeg';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -164,6 +165,34 @@ const LandingPage = () => {
 
   return (
     <div className="bg-white text-gray-800">
+
+      {/* DEVOTIONAL BLESSINGS BANNER */}
+      <div className="bg-gradient-to-r from-red-900 via-red-800 to-red-950 text-white py-4 px-6 border-b border-amber-500/30 flex items-center justify-center relative overflow-hidden shadow-md">
+        {/* Subtle decorative elements */}
+        <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-amber-500/10 to-transparent pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-amber-500/10 to-transparent pointer-events-none" />
+        
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left relative z-10">
+          <div className="relative flex-shrink-0">
+            <div className="absolute inset-0 bg-amber-500/30 rounded-full blur-sm animate-pulse" />
+            <img 
+              src={maaTaraImage} 
+              alt="Maa Tara Blessings" 
+              className="relative w-14 h-14 object-cover rounded-full border-2 border-amber-400 shadow-lg object-center"
+            />
+          </div>
+          <div className="space-y-1">
+            <h3 className="text-amber-300 font-bold text-sm sm:text-base tracking-widest uppercase flex items-center justify-center sm:justify-start gap-2">
+              <span>जय माँ तारा</span>
+              <span className="text-xs text-white/60">•</span>
+              <span className="text-xs text-white/80 font-medium">Safe & Auspicious Journeys</span>
+            </h3>
+            <p className="text-xs text-gray-200 leading-relaxed font-medium">
+              We seek the divine blessings of Maa Tara for all our passengers. May every ride with Five Star Enterprises be blessed with safety, peace, and protection. 🙏🏻❤️🌺
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* HERO SECTION WITH BG BANNER & LAYOUT */}
       <section className="relative min-h-screen sm:min-h-[85vh] flex items-center justify-center py-12 sm:py-16 px-4 bg-[#1a1c1e] border-b border-gray-200 overflow-hidden">
