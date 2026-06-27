@@ -326,26 +326,35 @@ const LandingPage = () => {
               className="text-4xl sm:text-7xl md:text-8xl font-black uppercase tracking-tight leading-none text-gray-900 flex flex-wrap"
             >
               <span className="text-[#e2383a] w-full block">
-                {"Welcome to Five Star".split("").map((char, index) => (
-                  <motion.span 
-                    key={index}
-                    variants={letterVariants}
-                    className={char === " " ? "w-3 sm:w-5" : "inline-block"}
-                  >
-                    {char}
-                  </motion.span>
+                {"Welcome to Five Star".split(" ").map((word, wordIndex) => (
+                  <span key={wordIndex} className="inline-block whitespace-nowrap">
+                    {word.split("").map((char, charIndex) => (
+                      <motion.span 
+                        key={charIndex}
+                        variants={letterVariants}
+                        className="inline-block"
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                    {wordIndex < "Welcome to Five Star".split(" ").length - 1 && (
+                      <span className="inline-block w-[0.25em]">&nbsp;</span>
+                    )}
+                  </span>
                 ))}
               </span>
               <span className="text-gray-900 w-full mt-2 sm:mt-3 block">
-                {"Enterprises".split("").map((char, index) => (
-                  <motion.span 
-                    key={index}
-                    variants={letterVariants}
-                    className={char === " " ? "w-3 sm:w-5" : "inline-block"}
-                  >
-                    {char}
-                  </motion.span>
-                ))}
+                <span className="inline-block whitespace-nowrap">
+                  {"Enterprises".split("").map((char, index) => (
+                    <motion.span 
+                      key={index}
+                      variants={letterVariants}
+                      className="inline-block"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
               </span>
             </motion.h1>
             
@@ -555,14 +564,21 @@ const LandingPage = () => {
               viewport={{ once: false, margin: "-100px" }}
               className="inline-flex flex-wrap text-[#e2383a] mt-2"
             >
-              {"Five Star Enterprises".split("").map((char, index) => (
-                <motion.span 
-                  key={index}
-                  variants={letterVariants}
-                  className={char === " " ? "w-3" : "inline-block"}
-                >
-                  {char}
-                </motion.span>
+              {"Five Star Enterprises".split(" ").map((word, wordIndex) => (
+                <span key={wordIndex} className="inline-block whitespace-nowrap">
+                  {word.split("").map((char, charIndex) => (
+                    <motion.span 
+                      key={charIndex}
+                      variants={letterVariants}
+                      className="inline-block"
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                  {wordIndex < "Five Star Enterprises".split(" ").length - 1 && (
+                    <span className="inline-block w-[0.25em]">&nbsp;</span>
+                  )}
+                </span>
               ))}
             </motion.span>
           </h2>

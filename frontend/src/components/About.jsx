@@ -86,14 +86,21 @@ const About = () => {
                 viewport={{ once: false, margin: "-100px" }}
                 className="inline-flex flex-wrap text-[#e2383a] mt-2"
               >
-                {"FIVE STAR ENTERPRISES".split("").map((char, index) => (
-                  <motion.span 
-                    key={index}
-                    variants={letterVariants}
-                    className={char === " " ? "w-3" : "inline-block"}
-                  >
-                    {char}
-                  </motion.span>
+                {"FIVE STAR ENTERPRISES".split(" ").map((word, wordIndex) => (
+                  <span key={wordIndex} className="inline-block whitespace-nowrap">
+                    {word.split("").map((char, charIndex) => (
+                      <motion.span 
+                        key={charIndex}
+                        variants={letterVariants}
+                        className="inline-block"
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                    {wordIndex < "FIVE STAR ENTERPRISES".split(" ").length - 1 && (
+                      <span className="inline-block w-[0.25em]">&nbsp;</span>
+                    )}
+                  </span>
                 ))}
               </motion.span>
             </h2>

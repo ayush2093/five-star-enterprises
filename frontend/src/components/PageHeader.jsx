@@ -134,14 +134,21 @@ const PageHeader = ({ title, breadcrumbs = [], bgImage }) => {
           animate="visible"
           className="flex flex-wrap items-center justify-center text-4xl sm:text-7xl md:text-8xl font-black tracking-tight text-[#e2383a] uppercase font-sans"
         >
-          {"FIVE STAR".split("").map((letter, idx) => (
-            <motion.span 
-              key={idx} 
-              variants={brandLetterVariants}
-              className={letter === " " ? "w-3 sm:w-5" : "inline-block"}
-            >
-              {letter}
-            </motion.span>
+          {"FIVE STAR".split(" ").map((word, wordIndex) => (
+            <span key={wordIndex} className="inline-block whitespace-nowrap">
+              {word.split("").map((letter, letterIndex) => (
+                <motion.span 
+                  key={letterIndex} 
+                  variants={brandLetterVariants}
+                  className="inline-block"
+                >
+                  {letter}
+                </motion.span>
+              ))}
+              {wordIndex < "FIVE STAR".split(" ").length - 1 && (
+                <span className="inline-block w-[0.25em]">&nbsp;</span>
+              )}
+            </span>
           ))}
         </motion.div>
         
@@ -152,15 +159,17 @@ const PageHeader = ({ title, breadcrumbs = [], bgImage }) => {
           animate="visible"
           className="flex flex-wrap items-center justify-center text-4xl sm:text-7xl md:text-8xl font-black tracking-tight text-white uppercase font-sans mt-0.5 sm:mt-1"
         >
-          {"ENTERPRISES".split("").map((letter, idx) => (
-            <motion.span 
-              key={idx} 
-              variants={brandLetterVariants}
-              className={letter === " " ? "w-3 sm:w-5" : "inline-block"}
-            >
-              {letter}
-            </motion.span>
-          ))}
+          <span className="inline-block whitespace-nowrap">
+            {"ENTERPRISES".split("").map((letter, idx) => (
+              <motion.span 
+                key={idx} 
+                variants={brandLetterVariants}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </span>
         </motion.div>
       </div>
 
